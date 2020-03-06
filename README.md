@@ -51,3 +51,12 @@ pacckage.json
       2. Uses Hooks to manage state
       3. function MyComponent(){return HTML}; export default MyComponent
       4. const MyComponent=()=>{ return HTML}; export default MyComponent
+   3. Stateless compnents
+   4. Statefull
+      1. Controlled Components, suitable for LOB apps
+         1. State object that will be changed with setState()
+         2. props, these will be accepted from parent of the current component
+      2. UnControlled Components
+         1. Use the 'ref' attributed to read/write state from and to UI Elements
+   5. Higher-Order-Component (HOC)
+   6. PureComponent

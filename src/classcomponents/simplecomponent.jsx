@@ -39,6 +39,7 @@ class SimpleComponent extends Component {
      render(){
          return (
              <div className="container">
+                <h1>{this.props.message}</h1>
                 <h2>Hello I am a React Component</h2>
                 <div className="form-group">
                   <label>N1</label>
