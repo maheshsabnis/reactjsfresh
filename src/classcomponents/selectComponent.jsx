@@ -6,18 +6,23 @@ class SelectComponent extends Component {
             dataSource:[],
         }
     }
-    
+    handleChange(evt){
+        console.log(evt.target.value);
+        this.props.selectedValue(evt.target.value);
+    }
     render() { 
        
         return ( 
             <div className="container">
-              {<select className="form-control" >
+              {
+                  <select className="form-control" onChange={this.handleChange.bind(this)}>
                  {
                      this.props.dataSource.map((d,i) => (
                          <option key={i} value={d}>{d}</option>
                      ))
                  }
-                </select> }
+                </select> 
+            }
             </div>
          );
     }

@@ -9,10 +9,15 @@ import * as serviceWorker from './serviceWorker';
 import SimpleComponent from './classcomponents/simplecomponent';
 import ParentComponent from './classcomponents/parentchild';
 import ParentDemoComponent from './classcomponents/parentchilddemo';
+import UnControlledComponent from './classcomponents/uncontrolledcomponent';
+import StudentComponent from './classcomponents/studentcomponent/studentcomponent';
+import LifeCycleComponent from './classcomponents/lifecycle';
+
+
 
 // render the App component using the 'render()' method
 // and mount it in 'root' DOM element on index.html
-ReactDOM.render( < ParentDemoComponent/ > , document.getElementById('root'));
+ReactDOM.render( < StudentComponent/ > , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
