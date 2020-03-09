@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import SelectComponent from './../selectComponent';
 
+import DataGricComponent from './../DataGridComponent';
+
 import Logic from './../../models/logic';
 
 import { Universities, Courses } from './../../models/constants';
@@ -61,8 +63,13 @@ class StudentComponent extends Component {
         console.log(`Vaule Received from SelectComponent ${val}`);
         this.setState({Course: val})
     }
-    rowClick(r){
-        console.log(r);
+    rowClick(s){
+        console.log(s);
+        this.setState({'StudentId':s.StudentId});
+        this.setState({'StudentName':s.StudentName});
+        this.setState({'University':s.University});
+        this.setState({'Course':s.Course});
+        this.setState({'Fees':s.Fees});
     }
     render() {
          
@@ -82,11 +89,11 @@ class StudentComponent extends Component {
                </div>
                <div className="form-group">
                   <label>University</label>
-                  <SelectComponent name="University" selectedValue={this.getSelectedUniversity.bind(this)} value={this.state.University} dataSource={this.state.universities}></SelectComponent>
+                  <SelectComponent name="University" data={this.state.University} selectedValue={this.getSelectedUniversity.bind(this)} value={this.state.University} dataSource={this.state.universities}></SelectComponent>
                </div>
                <div className="form-group">
                  <label>Courses</label>
-                 <SelectComponent name="Course" selectedValue={this.getSelectedCourse.bind(this)} dataSource={this.state.courses}></SelectComponent>
+                 <SelectComponent name="Course" data={this.state.Course} selectedValue={this.getSelectedCourse.bind(this)} dataSource={this.state.courses}></SelectComponent>
                </div>
                <div className="form-group">
                   <label>Fees</label>
@@ -110,7 +117,7 @@ class StudentComponent extends Component {
                   <tbody>
                      {
                          this.state.students.map((s,i) => (
-                             <tr key={i} onClick={this.rowClick.bind(s)}>
+                             <tr key={i} onClick={()=>this.rowClick(s)}> 
                                 <td>{s.StudentId}</td>
                                 <td>{s.StudentName}</td>
                                 <td>{s.University}</td>
@@ -121,6 +128,9 @@ class StudentComponent extends Component {
                      }
                   </tbody>
                </table>
+                <hr/>
+                <DataGricComponent dataSource={this.state.students}
+                selectedRow={this.rowClick.bind(this)}></DataGricComponent>
             </div>
         );
     }
