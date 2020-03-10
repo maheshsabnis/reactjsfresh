@@ -60,3 +60,13 @@ pacckage.json
          1. Use the 'ref' attributed to read/write state from and to UI Elements
    5. Higher-Order-Component (HOC)
    6. PureComponent
+# =============================================================================================
+Hooks in React.js 16.8+
+1. useState(state as any, behavior callback)
+   1. state: the schema of the state of the component
+      1. any --> string, number, date, array, {}, etc.
+   2. behavior --> the object using which the state is updated
+2. e.g.
+   1. const [x, updateX] = useState(0); <-- the ES 6 destructuring syntax
+      1. x will be 0 by default
+      2. updateX will update the value of x using some method 
