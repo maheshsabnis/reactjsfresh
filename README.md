@@ -70,3 +70,9 @@ Hooks in React.js 16.8+
    1. const [x, updateX] = useState(0); <-- the ES 6 destructuring syntax
       1. x will be 0 by default
       2. updateX will update the value of x using some method 
+3. useContext()
+   1. Provides a global objectthat will be used to share data across components 
+   2. createContext() method will create a global object that will provide data/events across components 
+      1. <DataContext.Provider value={<DATA and EVENT to be shared>}>
+      2.  <CHILD COMPONENT>
+      3. </DataContext.Provider>

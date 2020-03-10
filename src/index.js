@@ -5,8 +5,9 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // importing the function component
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ValidationExComponent from './classcomponents/ValidationExComponent';
-import StateHookComponent from './hooks/statehook';
+//import ValidationExComponent from './classcomponents/ValidationExComponent';
+//import StateHookComponent from './hooks/statehook';
+import StudentHookComponent from './hooks/objecthooks';
 
 // import SimpleComponent from './classcomponents/simplecomponent';
 // import ParentComponent from './classcomponents/parentchild';
@@ -19,7 +20,7 @@ import StateHookComponent from './hooks/statehook';
 
 // render the App component using the 'render()' method
 // and mount it in 'root' DOM element on index.html
-ReactDOM.render( < StateHookComponent/ > , document.getElementById('root'));
+ReactDOM.render( < StudentHookComponent/ > , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
