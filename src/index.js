@@ -18,31 +18,32 @@ import * as serviceWorker from './serviceWorker';
 // import StudentComponent from './classcomponents/studentcomponent/studentcomponent';
 // import LifeCycleComponent from './classcomponents/lifecycle';
 
-// import MainComponent from './routingapp/MainComponent';
+ import MainComponent from './routingapp/MainComponent';
 // import CodeSpiltComponent from './adv/codesplit';
-import DynamicLoadingComponent from './adv/codesplit/LoadDynamicComponent';
-import { Companies, Stocks } from './models/constants';
-import CompanyComponent from './hoc/CompanyComponent';
-import StockComponent from './hoc/StockComponent';
-import HoC from './hoc/HocComponent'; 
+//import DynamicLoadingComponent from './adv/codesplit/LoadDynamicComponent';
+//import { Companies, Stocks } from './models/constants';
+//import CompanyComponent from './hoc/CompanyComponent';
+//import StockComponent from './hoc/StockComponent';
+//import HoC from './hoc/HocComponent'; 
+// import Sidebar from './adv/ErrorBoundry/Demo';
 // return the CompanyInfoComponent based on Companies data passed
 // to the CompanyComponent
-const CompanyInfoComponent = HoC(CompanyComponent, Companies);
-const StockInfoComponent =  HoC(StockComponent, Stocks);
+//const CompanyInfoComponent = HoC(CompanyComponent, Companies);
+//const StockInfoComponent =  HoC(StockComponent, Stocks);
 
 
-// ReactDOM.render(
-//     <BrowserRouter>
-//         <MainComponent />
-//     </BrowserRouter>
-//     , document.getElementById('root')
-// );
+ReactDOM.render(
+    <BrowserRouter>
+        <MainComponent />
+    </BrowserRouter>
+    , document.getElementById('root')
+);
 
 // render the App component using the 'render()' method
 // and mount it in 'root' DOM element on index.html
- // ReactDOM.render( < DynamicLoadingComponent / > , document.getElementById('root'));
+ // ReactDOM.render( < Sidebar / > , document.getElementById('root'));
 
- ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
+// ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
