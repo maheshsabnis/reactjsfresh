@@ -19,6 +19,7 @@ import * as serviceWorker from './serviceWorker';
 // import LifeCycleComponent from './classcomponents/lifecycle';
 
  import MainComponent from './routingapp/MainComponent';
+import ApplicationComponent from './routingdemo/ApplicationComponent';
 // import CodeSpiltComponent from './adv/codesplit';
 //import DynamicLoadingComponent from './adv/codesplit/LoadDynamicComponent';
 //import { Companies, Stocks } from './models/constants';
@@ -34,7 +35,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
-        <MainComponent />
+        <ApplicationComponent />
     </BrowserRouter>
     , document.getElementById('root')
 );
