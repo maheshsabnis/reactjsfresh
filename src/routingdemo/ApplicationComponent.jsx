@@ -29,7 +29,7 @@ class ApplicationComponent extends Component {
                               <Link to="/">Home</Link>
                             </td>
                             <td>
-                              <Link to={`/about/${this.state.id}`}>About</Link>
+                              <Link to={`/about`}>About</Link>
                             </td>
                             <td>
                               <Link to="/contact">Contact</Link>
@@ -41,7 +41,7 @@ class ApplicationComponent extends Component {
                 <div>
                    <Switch>
                        <Route exact path="/" component={HomeComponent}/>
-                       <Route exact path="/about/:id" component={AboutComponent}/>
+                       <Route exact path="/about/:id?" component={AboutComponent}/>
                        <Route exact path="/contact" component={ContactComponent}/>
                        <Redirect to="/"/>
                    </Switch>
