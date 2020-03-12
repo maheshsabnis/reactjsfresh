@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import createStore
+import { createStore } from 'redux';
+// the Provider will provide teh store to all components
+// scoped with it.
+import {Provider} from 'react-redux';
+
+
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -18,8 +25,18 @@ import * as serviceWorker from './serviceWorker';
 // import StudentComponent from './classcomponents/studentcomponent/studentcomponent';
 // import LifeCycleComponent from './classcomponents/lifecycle';
 
- import MainComponent from './routingapp/MainComponent';
-import ApplicationComponent from './routingdemo/ApplicationComponent';
+// import MainComponent from './routingapp/MainComponent';
+// import ApplicationComponent from './routingdemo/ApplicationComponent';
+// import MyComponent from './testcomponent';
+import ReaduxComponent from './reduxapp/ReduxComponent';
+
+// create a store using reducer
+// import reducer (note that the exported combineReducer object can be diretly instantiated
+// in 'reducer')
+import  reducer  from './reduxapp/reducers/reducers';
+
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 // import CodeSpiltComponent from './adv/codesplit';
 //import DynamicLoadingComponent from './adv/codesplit/LoadDynamicComponent';
 //import { Companies, Stocks } from './models/constants';
@@ -33,16 +50,24 @@ import ApplicationComponent from './routingdemo/ApplicationComponent';
 //const StockInfoComponent =  HoC(StockComponent, Stocks);
 
 
-ReactDOM.render(
-    <BrowserRouter>
-        <ApplicationComponent />
-    </BrowserRouter>
-    , document.getElementById('root')
-);
+// ReactDOM.render(
+//     <BrowserRouter>
+//         <ApplicationComponent />
+//     </BrowserRouter>
+//     , document.getElementById('root')
+// );
 
 // render the App component using the 'render()' method
 // and mount it in 'root' DOM element on index.html
- // ReactDOM.render( < Sidebar / > , document.getElementById('root'));
+
+// subscribe the store to the ReaducComponents using 
+// 'Provider' component and pass store to it
+// all components, inside the <Provider></Provider>
+// will have access to 'dispatch()' method to the store to dispatch 
+// actions those will cause state in store to update
+ReactDOM.render( <Provider store={store}>
+            < ReaduxComponent / >
+    </Provider> , document.getElementById('root'));
 
 // ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
 

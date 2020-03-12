@@ -60,8 +60,11 @@ pacckage.json
          1. Use the 'ref' attributed to read/write state from and to UI Elements
    5. Higher-Order-Component (HOC)
    6. PureComponent
+
 # =============================================================================================
+
 Hooks in React.js 16.8+
+
 1. useState(state as any, behavior callback)
    1. state: the schema of the state of the component
       1. any --> string, number, date, array, {}, etc.
@@ -69,10 +72,29 @@ Hooks in React.js 16.8+
 2. e.g.
    1. const [x, updateX] = useState(0); <-- the ES 6 destructuring syntax
       1. x will be 0 by default
-      2. updateX will update the value of x using some method 
+      2. updateX will update the value of x using some method
 3. useContext()
-   1. Provides a global objectthat will be used to share data across components 
-   2. createContext() method will create a global object that will provide data/events across components 
+   1. Provides a global objectthat will be used to share data across components
+   2. createContext() method will create a global object that will provide data/events across components
       1. <DataContext.Provider value={<DATA and EVENT to be shared>}>
-      2.  <CHILD COMPONENT>
+      2. <CHILD COMPONENT>
       3. </DataContext.Provider>
+
+# ============================================================================================
+
+The Action is dispatched by Store object using store.dispatch() method. This method accepts 'Action' as input parameter and the action accepts 'payload' as input. Payload can be 'premptive type' or 'object'.
+
+--> store is created at application level
+--> use the 'createStore()' metjod from redux package to creare store at application level
+
+1. Define actions
+   1. Define Action-Type
+   2. Define Action Creator
+      1. Method with logic
+2. Define reducer
+   1. A pure function that is used to update state in store
+      1. a function that uses ACTION_TYPE to decide how the store is updated
+      2. We may have multiple reducers but all these will be combine togather using 'combineReducer' object
+      3. The bobibe reducer will then further used to create store
+3. Define Store using createStore() method. This will accept the reducer as input parameter
+4. Displatch Actions using store and pass payload to it
