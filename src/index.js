@@ -34,6 +34,7 @@ import ReaduxComponent from './reduxapp/ReduxComponent';
 // import reducer (note that the exported combineReducer object can be diretly instantiated
 // in 'reducer')
 import  reducer  from './reduxapp/reducers/reducers';
+import OrderedList from './componentsfortest/OrderList';
 
 let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -65,12 +66,13 @@ let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window._
 // all components, inside the <Provider></Provider>
 // will have access to 'dispatch()' method to the store to dispatch 
 // actions those will cause state in store to update
-ReactDOM.render( <Provider store={store}>
-            < ReaduxComponent / >
-    </Provider> , document.getElementById('root'));
+// ReactDOM.render( <Provider store={store}>
+//             < ReaduxComponent / >
+//     </Provider> , document.getElementById('root'));
 
 // ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
 
+ReactDOM.render(<OrderedList/> , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
