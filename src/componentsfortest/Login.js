@@ -4,7 +4,7 @@ class Login extends React.Component {
     constructor() {
         super()
         this.state = {
-            username: '',
+            email: '',
             password: ''
         }
     }
@@ -12,7 +12,7 @@ class Login extends React.Component {
     handleInputChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
-        })
+        },()=> console.log(`${this.state.email} ${this.state.password}`));
     }
     
     render() {

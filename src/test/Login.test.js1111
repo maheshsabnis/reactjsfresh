@@ -1,0 +1,45 @@
+import React from 'react';
+import { shallow, mount, render } from '../enzyme';
+import Login from '../componentsfortest/Login'
+
+describe('Login Test Suite', () => {
+
+    // just render the form
+    it('should render the form', () => {
+        const wrapper = shallow( < Login / > );
+        // use wrapper object to find DOM elements generated from the 'render()'
+        // method of the componen
+        // expect the form element with className as 'login'
+        expect(wrapper.find('form.login').exists()).toBe(true);
+        // find element with id as email
+        expect(wrapper.find('#email').length).toEqual(1);
+        expect(wrapper.find('#password').length).toEqual(1);
+    })
+})
+
+describe('Email Test Suite', () => {
+
+    it('should change the state of the Login component', () => {
+
+        const wrapper = shallow( < Login / > );
+        // asking the testcase to simulate 'onBlur' for the Element
+        wrapper.find('#email').simulate('blur', {
+            target: { name: 'email', value: 'logrocket@mail.com' }
+        });
+
+        expect(wrapper.state('email')).toEqual('logrocket@mail.com');
+    })
+})
+
+describe('Password Test Suite', () => {
+
+    it('should change the state of the Login component', () => {
+
+        const wrapper = mount( < Login / > );
+        wrapper.find('#password').simulate('blur', {
+            target: { name: 'password', value: 'my log is rocket' }
+        });
+
+        expect(wrapper.state('password')).toEqual('my log is rocket');
+    })
+});

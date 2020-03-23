@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 // the Provider will provide teh store to all components
 // scoped with it.
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 
 import { BrowserRouter } from 'react-router-dom';
@@ -22,19 +22,21 @@ import * as serviceWorker from './serviceWorker';
 // import ParentComponent from './classcomponents/parentchild';
 // import ParentDemoComponent from './classcomponents/parentchilddemo';
 // import UnControlledComponent from './classcomponents/uncontrolledcomponent';
-// import StudentComponent from './classcomponents/studentcomponent/studentcomponent';
+import StudentComponent from './classcomponents/studentcomponent/studentcomponent';
 // import LifeCycleComponent from './classcomponents/lifecycle';
 
 // import MainComponent from './routingapp/MainComponent';
 // import ApplicationComponent from './routingdemo/ApplicationComponent';
 // import MyComponent from './testcomponent';
-import ReaduxComponent from './reduxapp/ReduxComponent';
+// import ReaduxComponent from './reduxapp/ReduxComponent';
 
 // create a store using reducer
 // import reducer (note that the exported combineReducer object can be diretly instantiated
 // in 'reducer')
-import  reducer  from './reduxapp/reducers/reducers';
+import reducer from './reduxapp/reducers/reducers';
 import OrderedList from './componentsfortest/OrderList';
+import Login from './componentsfortest/Login';
+import StudentServiceComponent from './classcomponents/studentcomponent/studentservicecomponent';
 
 let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -72,7 +74,7 @@ let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window._
 
 // ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
 
-ReactDOM.render(<OrderedList/> , document.getElementById('root'));
+ReactDOM.render( < StudentServiceComponent / > , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
