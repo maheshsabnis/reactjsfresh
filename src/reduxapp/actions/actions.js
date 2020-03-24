@@ -1,4 +1,7 @@
 // action type
+
+import HttpService from "../../services/httpservice";
+
 // used by the reducer to upate the state in store
 export const ADD_STUDENT = "ADD_STUDENT";
 
@@ -7,7 +10,6 @@ export const ADD_STUDENT = "ADD_STUDENT";
 // return the action with payload
 // additionally it contains logic to work with actions
 export function addStudent(student) {
-    console.log(`In add student action ${JSON.stringify(student)}`);
     return {
         type: ADD_STUDENT,
         student
