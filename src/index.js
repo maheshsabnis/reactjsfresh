@@ -37,6 +37,9 @@ import reducer from './reduxapp/reducers/reducers';
 import OrderedList from './componentsfortest/OrderList';
 import Login from './componentsfortest/Login';
 import StudentServiceComponent from './classcomponents/studentcomponent/studentservicecomponent';
+import SecureCallComponent from './classcomponents/securecallcomponent';
+import UseEffectForAjaxComponent from './hooks/useeffectsahax';
+import UseEffectWithMouseEvent from './hooks/useEffectWithMouse';
 
 let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -74,7 +77,7 @@ let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window._
 
 // ReactDOM.render( <div> <CompanyInfoComponent/> <hr/> <StockInfoComponent/> </div> , document.getElementById('root'));
 
-ReactDOM.render( < StudentServiceComponent / > , document.getElementById('root'));
+ReactDOM.render( < UseEffectWithMouseEvent / > , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
